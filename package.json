@@ -24,7 +24,8 @@
   "author": "scottmotte",
   "license": "BSD",
   "dependencies": {
-    "request": ">= 1.2.0"
+    "request": ">= 1.2.0",
+    "merge": ">= 1.0.0"
   },
   "devDependencies": {
     "mocha": "",

@@ -7,8 +7,8 @@ var assert      = require('assert'),
 var valid_secret_api_key = process.env.SIGNATURE_SECRET_API_KEY;
 
 if (!valid_secret_api_key) {
-    sys.puts('To run mocha specs, you must have a SIGNATURE_SECRET_API_KEY environment variable with a test api key');
-    process.exit(2)
+  sys.puts('To run mocha specs, you must have a SIGNATURE_SECRET_API_KEY environment variable with a test api key');
+  process.exit(2);
 }
 
 describe('signatureio', function() {
@@ -53,6 +53,27 @@ describe('signatureio', function() {
         resp.success.should.eql(true);
         resp.documents.should.not.eql([]);
         done();
+      });
+    });
+
+    it('creates a document', function(done) {
+      var result = signatureio(valid_secret_api_key);
+
+      result.documents.create({url: "http://scottmotte.com/assets/resume.pdf"}, function(resp) {
+        resp.success.should.eql(true);
+        done();
+      });
+    });
+
+    it('retrieves a document', function(done) {
+      var result = signatureio(valid_secret_api_key);
+
+      result.documents.create({url: "http://scottmotte.com/assets/resume.pdf"}, function(resp) {
+        result.documents.retrieve(resp.document.id, function(resp2) {
+          resp2.success.should.eql(true);
+          resp2.document.id.should.eql(resp.document.id);
+          done();
+        });
       });
     });
   });
