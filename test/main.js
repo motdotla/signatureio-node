@@ -40,7 +40,7 @@ describe('signatureio', function() {
     it('returns false for success parameter', function(done) {
       var result = signatureio("invalid_key");
       
-      result.documents.all(function(resp) {
+      result.documents.all({}, function(resp) {
         resp.success.should.eql(false);
         done();
       });
@@ -49,7 +49,7 @@ describe('signatureio', function() {
     it('returns true for correct api key', function(done) {
       var result = signatureio(valid_secret_api_key);
 
-      result.documents.all(function(resp) {
+      result.documents.all({}, function(resp) {
         resp.success.should.eql(true);
         resp.documents.should.not.eql([]);
         done();
