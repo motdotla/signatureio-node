@@ -14,12 +14,14 @@ Node.js Bindings for Signature.io's API.
     var signatureio     = require('signatureio')(secret_api_key);
 
     signatureio.documents.all(
-       { email: 'foobar@example.org' },
-       function(err, customer) {
-          if (err) {
-             console.log(err.message);
-             return;
-          }
-          console.log("customer id", customer.id);
-       }
-     );
+      { },
+      function(response) {
+        if (response.success) {
+          console.log(success.error.message);
+          return;
+        } else {
+          console.log(success.documents);
+          return;
+        };
+      }
+    );
