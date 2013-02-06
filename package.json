@@ -1,0 +1,30 @@
+{
+  "name": "signatureio",
+  "version": "0.0.1",
+  "description": "Node.js Bindings for Signature.io's API.",
+  "main": "lib/main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "moch test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/scottmotte/signatureio-node.git"
+  },
+  "keywords": [
+    "signature",
+    "signature.io",
+    "signatureio",
+    "document",
+    "signing"
+  ],
+  "readmeFilename": "README.md",
+  "author": "scottmotte",
+  "license": "BSD",
+  "devDependencies": {
+     "mocha": "",
+     "should": ""
+   }
+}
