@@ -23,8 +23,11 @@
   "readmeFilename": "README.md",
   "author": "scottmotte",
   "license": "BSD",
+  "dependencies": {
+    "request": ">= 1.2.0"
+  },
   "devDependencies": {
-     "mocha": "",
-     "should": ""
-   }
+    "mocha": "",
+    "should": ""
+  }
 }
