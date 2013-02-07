@@ -30,7 +30,7 @@ Node.js Bindings for Signature.io's API.
 
 All methods takes a callback as their last parameter. The callback is called with the response.
 
-* `stripe.documents` - create, retrieve, all
+* `signatureio.documents` - create, retrieve, all
   * `all(filters)` - list documents
   * `create(document)` - create a document
   * `retrieve(document_id)` - retrieve a document by document id
