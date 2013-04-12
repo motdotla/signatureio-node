@@ -26,6 +26,10 @@ Node.js Bindings for Signature.io's API.
       }
     );
 
+Alternatively, you can simply set the environment variable SIGNATURE_SECRET_API_KEY on your machine. The node module will read it automatically so that you can simply call:
+
+    var signatureio = require('signatureio');
+
 ## API
 
 All methods takes a callback as their last parameter. The callback is called with the response.
