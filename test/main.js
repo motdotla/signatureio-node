@@ -18,13 +18,6 @@ describe('signatureio', function() {
 
       result.api_url.should.eql("https://www.signature.io/api/v0");
     });
-
-    it('sets the secret and public keys to null', function() {
-      var result = signatureio();
-
-      assert.equal(result.secret_api_key, null);
-      assert.equal(result.public_api_key, null);
-    });
   });
 
   describe('with arguments', function() {
@@ -47,7 +40,7 @@ describe('signatureio', function() {
     });
 
     it('returns true for correct api key', function(done) {
-      var result = signatureio(valid_secret_api_key);
+      var result = signatureio();
 
       result.documents.all({}, function(resp) {
         resp.success.should.eql(true);
@@ -57,7 +50,7 @@ describe('signatureio', function() {
     });
 
     it('creates a document', function(done) {
-      var result = signatureio(valid_secret_api_key);
+      var result = signatureio();
 
       result.documents.create({url: "http://scottmotte.com/assets/resume.pdf"}, function(resp) {
         resp.success.should.eql(true);
@@ -66,7 +59,7 @@ describe('signatureio', function() {
     });
 
     it('retrieves a document', function(done) {
-      var result = signatureio(valid_secret_api_key);
+      var result = signatureio();
 
       result.documents.create({url: "http://scottmotte.com/assets/resume.pdf"}, function(resp) {
         result.documents.retrieve(resp.document.id, function(resp2) {
