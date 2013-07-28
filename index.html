@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Signatureio-node : Node.js Bindings for Signature.io's API." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Signatureio-node</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/signatureio/signatureio-node">View on GitHub</a>
+
+          <h1 id="project_title">Signatureio-node</h1>
+          <h2 id="project_tagline">Node.js Bindings for Signature.io's API.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/signatureio/signatureio-node/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/signatureio/signatureio-node/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="signatureio-node" class="anchor" href="#signatureio-node"><span class="octicon octicon-link"></span></a>Signatureio-Node</h1>
+
+<p>Node.js Bindings for Signature.io's API.</p>
+
+<p><a href="https://travis-ci.org/scottmotte/signatureio-node"><img src="https://travis-ci.org/scottmotte/signatureio-node.png" alt="Build Status"></a></p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<pre><code>$ npm install signatureio
+</code></pre>
+
+<h2>
+<a name="usage-overview" class="anchor" href="#usage-overview"><span class="octicon octicon-link"></span></a>Usage overview</h2>
+
+<pre><code>var secret_api_key  = 'abc';  // Your Secret Signature.io API Key
+var signatureio     = require('signatureio')(secret_api_key);
+
+signatureio.documents.all(
+  { },
+  function(response) {
+    if (response.success) {
+      console.log(success.error.message);
+      return;
+    } else {
+      console.log(success.documents);
+      return;
+    };
+  }
+);
+</code></pre>
+
+<p>Alternatively, you can simply set the environment variable SIGNATURE_SECRET_API_KEY on your machine. The node module will read it automatically so that you can simply call:</p>
+
+<pre><code>var signatureio = require('signatureio');
+</code></pre>
+
+<h2>
+<a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h2>
+
+<p>All methods takes a callback as their last parameter. The callback is called with the response.</p>
+
+<ul>
+<li>
+<code>signatureio.documents</code> - create, retrieve, all
+
+<ul>
+<li>
+<code>all(filters)</code> - list documents</li>
+<li>
+<code>create(document)</code> - create a document</li>
+<li>
+<code>retrieve(document_id)</code> - retrieve a document by document id</li>
+</ul>
+</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Signatureio-node maintained by <a href="https://github.com/signatureio">signatureio</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
